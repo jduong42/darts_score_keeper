@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import GameSettingsComponent from './components/GameSettingsComponent';
 
 function App() {
+
+  const handleSettingsSubmit = (settings) => {
+    console.log('Settings submitted:', settings);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +25,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <GameSettingsComponent onSubmit={handleSettingsSubmit} />
     </div>
   );
 }
 
 export default App;
+
