@@ -1,18 +1,24 @@
 import React from 'react';
 import { Header } from './components/Player_header';
-import { PlayerButton } from './components/Player_button';
-import { DisplayPlayers } from './components/Display_players';
+import { AddPlayer } from './components/AddPlayer';
+import { RemovePlayer } from './components/RemovePlayer';
+import { DisplayPlayers } from './components/DisplayPlayers';
+
+import { GlobalProvider } from './context/GlobalState';
 
 import './App.css';
 
+
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       <Header />
       <div className="container">
-      <PlayerButton />
+      <DisplayPlayers />
+      <AddPlayer />
+      <RemovePlayer />
       </div>
-    </div>
+    </GlobalProvider>
     );
 }
 
