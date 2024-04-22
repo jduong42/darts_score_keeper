@@ -13,10 +13,10 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
-    function addPlayerScore(id) {
+    function addPlayerScore(newScore) {
         dispatch({
-            type: 'ADD_PLAYER_SCORE',
-            payload: id
+            type: 'CHANGE_PLAYER_SCORE',
+            payload: newScore
         })
     }
 

@@ -1,10 +1,20 @@
 export default (state, action) => {
     switch(action.type) {
-        case 'ADD_PLAYER_SCORE':
+        case 'CHANGE_PLAYER_SCORE':
+            const updatedScores = state.scores.map(player => {
+                if (player.id === action.payload.id) {
+                    return {
+                        ...player,
+                        score: (player.score - action.payload.score)
+                    };
+                }
+                return player;
+            });
             return {
                 ...state,
-                scores: [action.payload, ...state.scores]
-            }
+                scores: updatedScores
+            };
+        
         default:
             return state
     }
