@@ -3,11 +3,7 @@ import AppReducer from './AppReducer';
 
 // Initial state
 const initialState = {
-    players: [],
-    scores: [
-        { id: 1, score: 301 },
-        { id: 2, score: 501 }
-    ]
+    players: []
 };
 
 // Create context

@@ -11,18 +11,26 @@ export default (state, action) => {
                 players: state.players.filter(player => player.id !== action.payload)
             }
         case 'CHANGE_PLAYER_SCORE':
-            const updatedScores = state.scores.map(player => {
+            const updatedScores = state.players.map(player => {
                 if (player.id === action.payload.id) {
-                    return {
-                        ...player,
-                        score: (player.score - action.payload.score)
-                    };
+                    if (player.score) {
+                        return {
+                            ...player,
+                            score: (player.score - action.payload.score)
+                        };
+                    } else {
+                        return {
+                            ...player,
+                            score: 301
+                        };
+                    }
+                    
                 }
                 return player;
             });
             return {
                 ...state,
-                scores: updatedScores
+                players: updatedScores
             };
             
         default:
