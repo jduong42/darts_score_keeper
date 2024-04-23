@@ -4,7 +4,7 @@ import { GlobalContext } from '../context/GlobalState.js';
 export const AddScore = ({ playerId }) => {
     const [score, setScore] = useState(0);
     const { addPlayerScore } = useContext(GlobalContext);
-    const { scores } = useContext(GlobalContext);
+    // const { scores } = useContext(GlobalContext);
 
     const onSubmit = e => {
         e.preventDefault();
@@ -14,16 +14,8 @@ export const AddScore = ({ playerId }) => {
             score: parseInt(score, 10)
         }
 
-        let currentPlayer = 0;
-        //(currentPlayer < scores.length) ? currentPlayer = currentPlayer + 1 : currentPlayer = 0;
-        if (currentPlayer < scores.length) {
-            currentPlayer++;
-        } else {
-            currentPlayer = 0;
-        }
-
-        console.log(scores.length);
-        console.log(currentPlayer);
+        // TODO: change current player on each onSubmit call
+        // to modify all of the players' scores one by one
 
         addPlayerScore(newScore);
     }
