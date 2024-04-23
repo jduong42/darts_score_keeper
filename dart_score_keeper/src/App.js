@@ -16,6 +16,9 @@ function App() {
       <div className="container">
       <DisplayPlayers />
       <AddPlayer />
+      <h3>(When game is running):</h3>
+      <ShowScore />
+      <AddScore playerId={1} />
       </div>
     </GlobalProvider>
     );
