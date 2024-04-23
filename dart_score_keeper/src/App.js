@@ -3,6 +3,9 @@ import { Header } from './components/Player_header';
 import { AddPlayer } from './components/AddPlayer';
 import { RemovePlayer } from './components/RemovePlayer';
 import { DisplayPlayers } from './components/DisplayPlayers';
+import { ShowScore } from './components/ShowScore.js';
+import { AddScore } from './components/AddScore.js';
+
 
 import { GlobalProvider } from './context/GlobalState';
 
