@@ -90,6 +90,7 @@ export const GlobalProvider = ({ children }) => {
 
         if (player.legs >= state.legSize - 1) {
             window.alert("Game over, " + player.name + " won!");
+            window.location.reload();
         } else {
             if (window.confirm("Leg over, press Ok to start the next leg, or Cancel to go back to the menu.")) {
                 txt = "Starting the next leg";

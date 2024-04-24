@@ -13,21 +13,18 @@ export default (state, action) => {
         case 'CHANGE_PLAYER_SCORE':
             const updatedScores = state.players.map(player => {
                 if (player.id === action.payload.id) {
-                    /*if (player.score) {
+                    if ((player.score - action.payload.score) == 1 || (player.score - action.payload.score) < 0) {
                         return {
                             ...player,
-                            score: (player.score - action.payload.score)
+                            score: player.score
                         };
                     } else {
                         return {
                             ...player,
-                            score: (301 - action.payload.score)
+                            score: (player.score - action.payload.score)
                         };
-                    }*/
-                    return {
-                        ...player,
-                        score: (player.score - action.payload.score)
-                    };
+                    }
+                    
                 }
                 return player;
             });
