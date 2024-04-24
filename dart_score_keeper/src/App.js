@@ -17,14 +17,14 @@ function App() {
   return (
     <GlobalProvider>
       <Header />
-      <div className="container">
-      <DisplayInfo className="pregame" />
-      <DisplayPlayers className="pregame" />
-      <AddPlayer className="pregame" />
-      <GameSettingsComponent className="pregame" />
+      <div>
+      <DisplayInfo />
+      <DisplayPlayers />
+      <AddPlayer />
+      <GameSettingsComponent />
       <StartGameButton />
-      <ShowScore className="game" />
-      <AddScore className="game" />
+      <ShowScore />
+      <AddScore />
       </div>
     </GlobalProvider>
     );

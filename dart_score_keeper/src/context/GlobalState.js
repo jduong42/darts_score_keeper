@@ -74,6 +74,42 @@ export const GlobalProvider = ({ children }) => {
         })
     }
 
+    function addLegForPlayer(player) {
+        console.log("addLegForPlayer()");
+        dispatch ({
+            type: 'ADD_LEG_FOR_PLAYER',
+            payload: player.id
+        });
+
+        let txt;
+
+        if (player.legs >= state.legSize - 1) {
+            window.alert("Game over, " + player.name + " won!");
+        } else {
+            if (window.confirm("Leg over, press Ok to start the next leg, or Cancel to go back to the menu.")) {
+                txt = "Starting the next leg";
+            } else {
+                txt = "Going back to the menu";
+            }
+        }
+        
+    }
+
+    function startNewLeg() {
+        dispatch ({
+            type: 'SET_GAME_TYPE_FOR_PLAYERS',
+            payload: state.gameType
+        })
+    }
+
+    function changeGameStatus() {
+        console.log("GAME ENDED");
+        dispatch ({
+            type: 'CHANGE_GAME_STATUS',
+            payload: true
+        })
+    }
+
     return (<GlobalContext.Provider value={{
         players: state.players,
         addPlayer,
@@ -85,7 +121,10 @@ export const GlobalProvider = ({ children }) => {
         setGameTypeForPlayers,
         setLegSize,
         legSize: state.legSize,
-        gameType: state.gameType
+        gameType: state.gameType,
+        addLegForPlayer,
+        startNewLeg,
+        changeGameStatus
     }}>
         {children}
     </GlobalContext.Provider>);

@@ -13,7 +13,7 @@ export default (state, action) => {
         case 'CHANGE_PLAYER_SCORE':
             const updatedScores = state.players.map(player => {
                 if (player.id === action.payload.id) {
-                    if (player.score) {
+                    /*if (player.score) {
                         return {
                             ...player,
                             score: (player.score - action.payload.score)
@@ -23,8 +23,11 @@ export default (state, action) => {
                             ...player,
                             score: (301 - action.payload.score)
                         };
-                    }
-                    
+                    }*/
+                    return {
+                        ...player,
+                        score: (player.score - action.payload.score)
+                    };
                 }
                 return player;
             });
@@ -59,6 +62,28 @@ export default (state, action) => {
                 ...state,
                 legSize: parseInt(action.payload)
             }
+
+        case 'ADD_LEG_FOR_PLAYER':
+            const updatedLegs = state.players.map(player => {
+                if (player.id === action.payload) {
+                    return {
+                        ...player,
+                        legs: (player.legs = player.legs + 1)
+                    };
+                }
+                return player;
+            });
+            return {
+                ...state,
+                players: updatedLegs
+            };
+            
+        case 'CHANGE_GAME_STATUS':
+            return {
+                ...state,
+                gameRunning: action.payload
+            }
+
         default:
             return state;
     }

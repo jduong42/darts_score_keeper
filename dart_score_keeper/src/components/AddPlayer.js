@@ -11,7 +11,8 @@ export const AddPlayer = () => {
 
         const newPlayer = {
             id: Math.floor(Math.random() * 100000000),
-            name
+            name,
+            legs: 0
         }
         addPlayer(newPlayer);
     }

@@ -5,6 +5,8 @@ export const AddScore = () => {
     const [score, setScore] = useState();
     const [playerIndex, setPlayerIndex] = useState(0);
     const { players, addPlayerScore } = useContext(GlobalContext);
+    const { addLegForPlayer } = useContext(GlobalContext);
+    const { startNewLeg } = useContext(GlobalContext);
 
     const onSubmit = e => {
         e.preventDefault();
@@ -17,8 +19,15 @@ export const AddScore = () => {
 
         addPlayerScore(newScore);
 
+        if ((players[playerIndex].score - score) <= 0) {
+            addLegForPlayer(players[playerIndex]);
+            startNewLeg();
+        }
+
         setPlayerIndex((playerIndex + 1) % players.length);
         setScore(0);
+
+        
     }
 
     const currentPlayerName = players.length > 0 ? players[playerIndex].name : "N/A";
@@ -28,7 +37,7 @@ export const AddScore = () => {
             <h3>{currentPlayerName}'s turn</h3>
             <form onSubmit={onSubmit}>
                 <div className="form-control">
-                    <label htmlFor="score">Score</label>
+                    <label htmlFor="score">Input the score of the turn:</label>
                     <input type="number" value={score} onChange={(e) => setScore(e.target.value)} placeholder="Enter score..." />
                     <input type="submit" value="Submit"></input>
                 </div>
