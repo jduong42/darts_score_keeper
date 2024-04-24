@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from './components/Player_header';
 import { AddPlayer } from './components/AddPlayer';
-import { RemovePlayer } from './components/RemovePlayer';
+import { GameSettingsComponent } from './components/GameSettingsComponent.js';
 import { DisplayPlayers } from './components/DisplayPlayers';
 import { ShowScore } from './components/ShowScore.js';
 import { AddScore } from './components/AddScore.js';
@@ -19,6 +19,7 @@ function App() {
       <div className="container">
       <DisplayPlayers />
       <AddPlayer />
+      <GameSettingsComponent />
       <h3>(When game is running):</h3>
       <ShowScore />
       <AddScore />

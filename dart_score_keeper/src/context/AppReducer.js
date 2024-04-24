@@ -33,6 +33,32 @@ export default (state, action) => {
                 players: updatedScores
             };
             
+        case 'SET_GAME_TYPE':
+            return {
+                ...state,
+                gameType: parseInt(action.payload)
+            }
+
+        case 'SET_GAME_TYPE_FOR_PLAYERS':
+            const initializedScore = parseInt(action.payload);
+
+            const updatedPlayers = state.players.map(player => {
+                return {
+                    ...player,
+                    score: initializedScore
+                };
+            });
+        
+            return {
+                ...state,
+                players: updatedPlayers
+            };
+
+        case 'SET_LEG_SIZE':
+            return {
+                ...state,
+                legSize: parseInt(action.payload)
+            }
         default:
             return state;
     }
