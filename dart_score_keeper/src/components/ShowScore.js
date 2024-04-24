@@ -5,7 +5,7 @@ export const ShowScore = () => {
     const { players } = useContext(GlobalContext);
 
     return (
-        <div>
+        <div className="game">
             <h3>Scores</h3>
                 {players.map(players => (<div key={players.id}>{players.name}: {players.score}</div>))}
         </div>

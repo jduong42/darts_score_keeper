@@ -5,7 +5,8 @@ import AppReducer from './AppReducer';
 const initialState = {
     players: [],
     gameType: 301,
-    legSize: 3
+    legSize: 3,
+    gameRunning: false
 };
 
 // Create context
@@ -29,6 +30,20 @@ export const GlobalProvider = ({ children }) => {
             type: 'REMOVE_PLAYER',
             payload: players
         });
+    }
+
+    function globalStartGame() {
+        console.log("GAME STARTED");
+        const pregameComponents = document.getElementsByClassName("pregame");
+        const gameComponents = document.getElementsByClassName("game");
+
+        for (let i = 0; i < pregameComponents.length; i++) {
+            pregameComponents[i].style.display = "none";
+        }
+
+        for (let i = 0; i < gameComponents.length; i++) {
+            gameComponents[i].style.display = "block";
+        }
     }
 
     function addPlayerScore(newScore) {
@@ -63,6 +78,7 @@ export const GlobalProvider = ({ children }) => {
         players: state.players,
         addPlayer,
         removePlayer,
+        globalStartGame,
         scores: state.scores,
         addPlayerScore,
         setGameType,

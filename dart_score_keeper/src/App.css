@@ -164,3 +164,7 @@ input[type='number'] {
   cursor: pointer;
   margin-left: 10px;
 }
+
+.game {
+  display: none;
+}

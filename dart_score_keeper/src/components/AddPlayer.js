@@ -17,7 +17,7 @@ export const AddPlayer = () => {
     }
 
     return (
-        <>
+        <div className="pregame">
             <h3> Add new player.</h3>
             <form onSubmit={onSubmit}>
                 <div className="form-control">
@@ -27,6 +27,6 @@ export const AddPlayer = () => {
                 </div>
                 <button className="btn">Add player</button>
             </form>
-        </>
+        </div>
     )
 }

@@ -17,18 +17,18 @@ export const GameSettingsComponent = ({ onSubmit }) => {
     setLegSize(event.target.value);
   };
 
-  const [message, setMessage] = useState('');
+  //const [message, setMessage] = useState('');
 
-  const handleSubmit = () => {
+  /*const handleSubmit = () => {
     console.log("Submit button clicked");
     //onSubmit({ gameType, legSize });
     setMessage("Settings have been submitted.");
 
 
-  };
+  };*/
 
   return (
-    <div id="gameSettings" className="settings-panel">
+    <div id="gameSettings" className="settings-panel pregame">
       <label htmlFor="gameType">Choose Game Type:</label>
       <select id="gameType" value={gameType} onChange={handleGameTypeChange}>
         <option value="301">301</option>
@@ -43,8 +43,8 @@ export const GameSettingsComponent = ({ onSubmit }) => {
       </select>
 
 
-      <p>{message}</p>
-      <button onClick={handleSubmit}>Submit</button>
+      {/*<p>{message}</p>
+      <button onClick={handleSubmit}>Submit</button>*/}
     </div>
   );
 }

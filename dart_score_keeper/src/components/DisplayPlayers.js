@@ -8,7 +8,7 @@ export const DisplayPlayers = () => {
     const playerList = players.map(player => (player.name));
 
     return (
-        <>
+        <div className="pregame">
             <h4>{playerList.length > 0 ? 'Current players:' : 'No players yet'}</h4>
             {players.slice().reverse().map(player => (
                 <div key={player.id}>
@@ -16,6 +16,6 @@ export const DisplayPlayers = () => {
                     <RemovePlayer player={player} />
                 </div>                
             ))}
-        </>
+        </div>
     )
 }

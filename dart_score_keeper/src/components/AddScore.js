@@ -18,14 +18,14 @@ export const AddScore = () => {
         addPlayerScore(newScore);
 
         setPlayerIndex((playerIndex + 1) % players.length);
-        setScore();
+        setScore(0);
     }
 
     const currentPlayerName = players.length > 0 ? players[playerIndex].name : "N/A";
 
     return (
-        <div>
-            <h3>Add score for {currentPlayerName}</h3>
+        <div className="game">
+            <h3>{currentPlayerName}'s turn</h3>
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="score">Score</label>
