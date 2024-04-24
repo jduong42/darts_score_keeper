@@ -21,7 +21,7 @@ export default (state, action) => {
                     } else {
                         return {
                             ...player,
-                            score: 301
+                            score: (301 - action.payload.score)
                         };
                     }
                     
