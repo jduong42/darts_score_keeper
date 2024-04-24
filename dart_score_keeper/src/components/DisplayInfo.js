@@ -9,9 +9,11 @@ export const DisplayInfo = () => {
             <h2>Game Info:</h2>
             <p>Maximum legs: {legSize}</p>
             <p>Game type: {gameType}</p>
-            {players.map((player, index) => (
-                <p key={index}>{player.name}, Won legs: {player.legs}</p>
-            ))}
+            <div className="game">
+                {players.map((player, index) => (
+                    <p key={index}>{player.name}, Won legs: {player.legs}</p>
+                ))}
+            </div>
         </div>
     )
 }
