@@ -67,7 +67,9 @@ export const GlobalProvider = ({ children }) => {
         addPlayerScore,
         setGameType,
         setGameTypeForPlayers,
-        setLegSize
+        setLegSize,
+        legSize: state.legSize,
+        gameType: state.gameType
     }}>
         {children}
     </GlobalContext.Provider>);

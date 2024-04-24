@@ -5,6 +5,7 @@ import { GameSettingsComponent } from './components/GameSettingsComponent.js';
 import { DisplayPlayers } from './components/DisplayPlayers';
 import { ShowScore } from './components/ShowScore.js';
 import { AddScore } from './components/AddScore.js';
+import { DisplayInfo } from './components/DisplayInfo.js';
 
 
 import { GlobalProvider } from './context/GlobalState';
@@ -17,6 +18,7 @@ function App() {
     <GlobalProvider>
       <Header />
       <div className="container">
+      <DisplayInfo />
       <DisplayPlayers />
       <AddPlayer />
       <GameSettingsComponent />
