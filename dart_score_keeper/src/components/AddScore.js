@@ -1,28 +1,29 @@
 import React, {useState, useContext} from 'react';
 import { GlobalContext } from '../context/GlobalState.js';
 
-export const AddScore = ({ playerId }) => {
+export const AddScore = () => {
     const [score, setScore] = useState(0);
-    const { addPlayerScore } = useContext(GlobalContext);
-    // const { scores } = useContext(GlobalContext);
+    const [playerIndex, setPlayerIndex] = useState(0);
+    const { players, addPlayerScore } = useContext(GlobalContext);
 
     const onSubmit = e => {
         e.preventDefault();
 
+        const currentPlayerId = players[playerIndex].id;
         const newScore = {
-            id: playerId,
+            id: currentPlayerId,
             score: parseInt(score, 10)
         }
 
-        // TODO: change current player on each onSubmit call
-        // to modify all of the players' scores one by one
-
         addPlayerScore(newScore);
+
+        setPlayerIndex((playerIndex + 1) % players.length);
+        setScore(0);
     }
 
     return (
         <div>
-            <h3>Add score for (playername)</h3>
+            <h3>Add score for { players[playerIndex].name }</h3>
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="score">Score</label>

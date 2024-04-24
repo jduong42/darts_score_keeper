@@ -21,7 +21,7 @@ function App() {
       <AddPlayer />
       <h3>(When game is running):</h3>
       <ShowScore />
-      <AddScore playerId={1} />
+      <AddScore />
       </div>
     </GlobalProvider>
     );
