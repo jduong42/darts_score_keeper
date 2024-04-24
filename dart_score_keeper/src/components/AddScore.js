@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState.js';
 
 export const AddScore = () => {
-    const [score, setScore] = useState(0);
+    const [score, setScore] = useState();
     const [playerIndex, setPlayerIndex] = useState(0);
     const { players, addPlayerScore } = useContext(GlobalContext);
 
@@ -18,7 +18,7 @@ export const AddScore = () => {
         addPlayerScore(newScore);
 
         setPlayerIndex((playerIndex + 1) % players.length);
-        setScore(0);
+        setScore();
     }
 
     const currentPlayerName = players.length > 0 ? players[playerIndex].name : "N/A";
