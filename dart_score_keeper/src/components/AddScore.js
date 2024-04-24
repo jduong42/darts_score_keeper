@@ -11,10 +11,15 @@ export const AddScore = () => {
     const onSubmit = e => {
         e.preventDefault();
 
+        if (!score) {
+            alert("Please enter a score");
+            return;
+        }
+
         const currentPlayerId = players[playerIndex].id;
         const newScore = {
             id: currentPlayerId,
-            score: parseInt(score, 10)
+            score: score ? parseInt(score, 10) : 0
         }
 
         addPlayerScore(newScore);
@@ -25,9 +30,7 @@ export const AddScore = () => {
         }
 
         setPlayerIndex((playerIndex + 1) % players.length);
-        setScore(0);
-
-        
+        setScore("");
     }
 
     const currentPlayerName = players.length > 0 ? players[playerIndex].name : "N/A";

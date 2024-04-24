@@ -44,6 +44,11 @@ export const GlobalProvider = ({ children }) => {
         for (let i = 0; i < gameComponents.length; i++) {
             gameComponents[i].style.display = "block";
         }
+
+        dispatch ({
+            type: 'SET_GAME_TYPE_FOR_PLAYERS',
+            payload: state.gameType
+        })
     }
 
     function addPlayerScore(newScore) {
