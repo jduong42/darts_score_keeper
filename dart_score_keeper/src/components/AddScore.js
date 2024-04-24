@@ -21,7 +21,7 @@ export const AddScore = () => {
         setScore(0);
     }
 
-    const currentPlayerName = players.length > 0 ? players[playerIndex].name : "NaN";
+    const currentPlayerName = players.length > 0 ? players[playerIndex].name : "N/A";
 
     return (
         <div>
