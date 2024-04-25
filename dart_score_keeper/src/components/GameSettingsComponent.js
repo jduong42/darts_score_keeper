@@ -29,18 +29,21 @@ export const GameSettingsComponent = ({ onSubmit }) => {
 
   return (
     <div id="gameSettings" className="settings-panel pregame">
-      <label htmlFor="gameType">Choose Game Type:</label>
-      <select id="gameType" value={gameType} onChange={handleGameTypeChange}>
-        <option value="301">301</option>
-        <option value="501">501</option>
-      </select>
-
-      <label htmlFor="legSize">Choose Set Leg Size:</label>
-      <select id="legSize" value={legSize} onChange={handleLegSizeChange}>
-        <option value="3">3</option>
-        <option value="5">5</option>
-        <option value="7">7</option>
-      </select>
+      <div className="game-type">
+        <label htmlFor="gameType">Choose game type: </label>
+        <select id="gameType" value={gameType} onChange={handleGameTypeChange}>
+          <option value="301">301</option>
+          <option value="501">501</option>
+        </select>
+      </div>
+      <div className="set-leg-size">
+        <label htmlFor="legSize"> Choose set leg size: </label>
+        <select id="legSize" value={legSize} onChange={handleLegSizeChange}>
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="7">7</option>
+        </select>
+      </div>
 
 
       {/*<p>{message}</p>
