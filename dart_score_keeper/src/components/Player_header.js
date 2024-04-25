@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './Player_header.css';
 
 export const Header = () => {
   return (
-    <h1>Darts score keeper</h1>
-  )
+    <header className="header">
+      Darts score keeper
+    </header>
+  );
 }
