@@ -19,10 +19,10 @@ export const AddPlayer = () => {
 
     return (
         <div className="pregame">
-            <h3> Add new player.</h3>
+            <h3> Add a new player:</h3>
             <form onSubmit={onSubmit}>
                 <div className="form-control">
-                    <label htmlFor="name">Player Name</label>
+                    <label htmlFor="name">Player Name: </label>
                     <input type="text" value={name} onChange={(e) => 
                         setName(e.target.value)} placeholder="Enter player name..." />
                 </div>

@@ -9,7 +9,7 @@ export const StartGameButton = () => {
 
   return (
     <div className="pregame">
-        <button onClick={StartGame}>Start game</button>
+      <button className="btn" onClick={StartGame}>Start game</button>
     </div>
   )
 }

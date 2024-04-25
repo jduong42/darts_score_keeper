@@ -42,7 +42,7 @@ export const AddScore = () => {
                 <div className="form-control">
                     <label htmlFor="score">Input the score of the turn:</label>
                     <input type="number" value={score} onChange={(e) => setScore(e.target.value)} placeholder="Enter score..." />
-                    <input type="submit" value="Submit"></input>
+                    <input type="submit" className="btn" value="Submit"></input>
                 </div>
             </form>
         </div>

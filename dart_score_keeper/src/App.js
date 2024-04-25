@@ -19,9 +19,9 @@ function App() {
       <Header />
       <div className="container">
         <GameSettingsComponent />
+        <AddPlayer />
         <DisplayInfo />
         <DisplayPlayers />
-        <AddPlayer />
         <StartGameButton />
         <ShowScore />
         <AddScore />
