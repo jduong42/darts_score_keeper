@@ -41,21 +41,14 @@ h4 {
   text-transform: uppercase;
 }
 
-.inc-exp-container {
+.card {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
   margin: 20px 0;
 }
 
-.inc-exp-container > div {
-  flex: 1;
-  text-align: center;
-}
-
-.inc-exp-container > div:first-of-type {
+.card-header {
   border-right: 1px solid #dedede;
 }
 
@@ -73,8 +66,7 @@ h4 {
   color: #c0392b;
 }
 
-label {
-  display: inline-block;
+.form-group {
   margin: 10px 0;
 }
 
@@ -112,7 +104,7 @@ input[type='number'] {
   margin-bottom: 40px;
 }
 
-.list li {
+.list-item {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   color: #333;
@@ -123,11 +115,11 @@ input[type='number'] {
   margin: 10px 0;
 }
 
-.list li.plus {
+.list-item.plus {
   border-right: 5px solid #2ecc71;
 }
 
-.list li.minus {
+.list-item.minus {
   border-right: 5px solid #c0392b;
 }
 
@@ -147,7 +139,7 @@ input[type='number'] {
   transition: opacity 0.3s ease;
 }
 
-.list li:hover .delete-btn {
+.list-item:hover .delete-btn {
   opacity: 1;
 }
 

@@ -17,17 +17,17 @@ function App() {
   return (
     <GlobalProvider>
       <Header />
-      <div>
-      <DisplayInfo />
-      <DisplayPlayers />
-      <AddPlayer />
-      <GameSettingsComponent />
-      <StartGameButton />
-      <ShowScore />
-      <AddScore />
+      <div className="container">
+        <GameSettingsComponent />
+        <DisplayInfo />
+        <DisplayPlayers />
+        <AddPlayer />
+        <StartGameButton />
+        <ShowScore />
+        <AddScore />
       </div>
     </GlobalProvider>
-    );
+  );
 }
 
 export default App;
