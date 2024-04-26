@@ -11,7 +11,7 @@ export const DisplayInfo = () => {
             <p>Maximum legs: {legSize}</p>
             <div className="game">
                 {players.map((player, index) => (
-                    <p key={index}>{player.name}, Won legs: {player.legs}</p>
+                    <p key={index}>{player.name}, points: {player.legs}</p>
                 ))}
             </div>
         </div>
