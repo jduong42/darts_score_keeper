@@ -96,6 +96,7 @@ export const GlobalProvider = ({ children }) => {
                 txt = "Starting the next leg";
             } else {
                 txt = "Going back to the menu";
+                window.location.reload();
             }
         }
         
