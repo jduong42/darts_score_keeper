@@ -1,11 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState.js';
 
 export const GameSettingsComponent = ({ onSubmit }) => {
-  //const [gameType, setGameType] = useState('301');
-  //const [legSize, setLegSize] = useState('3');
   const { gameType, setGameType } = useContext(GlobalContext);
-  const { players, setGameTypeForPlayers } = useContext(GlobalContext);
+  const { setGameTypeForPlayers } = useContext(GlobalContext);
   const { legSize, setLegSize } = useContext(GlobalContext);
 
   const handleGameTypeChange = (event) => {
@@ -16,16 +14,6 @@ export const GameSettingsComponent = ({ onSubmit }) => {
   const handleLegSizeChange = (event) => {
     setLegSize(event.target.value);
   };
-
-  //const [message, setMessage] = useState('');
-
-  /*const handleSubmit = () => {
-    console.log("Submit button clicked");
-    //onSubmit({ gameType, legSize });
-    setMessage("Settings have been submitted.");
-
-
-  };*/
 
   return (
     <div id="gameSettings" className="settings-panel pregame">
@@ -44,15 +32,6 @@ export const GameSettingsComponent = ({ onSubmit }) => {
           <option value="7">7</option>
         </select>
       </div>
-
-
-      {/*<p>{message}</p>
-      <button onClick={handleSubmit}>Submit</button>*/}
     </div>
   );
 }
-
-
-
-//export default GameSettingsComponent;
-//ReactDOM.render(<App />, document.getElementById('root'));

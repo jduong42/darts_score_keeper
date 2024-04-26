@@ -24,7 +24,7 @@ export const AddScore = () => {
 
         addPlayerScore(newScore);
 
-        if ((players[playerIndex].score - score) == 0) {
+        if ((players[playerIndex].score - score) === 0) {
             addLegForPlayer(players[playerIndex]);
             startNewLeg();
         }

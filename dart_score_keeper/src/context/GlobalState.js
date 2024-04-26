@@ -86,16 +86,14 @@ export const GlobalProvider = ({ children }) => {
             payload: player.id
         });
 
-        let txt;
-
         if (player.legs >= state.legSize - 1) {
             window.alert("Game over, " + player.name + " won!");
             window.location.reload();
         } else {
             if (window.confirm("Leg over, press Ok to start the next leg, or Cancel to go back to the menu.")) {
-                txt = "Starting the next leg";
+                console.log("Starting the next leg");
             } else {
-                txt = "Going back to the menu";
+                console.log("Going back to the menu");
                 window.location.reload();
             }
         }
